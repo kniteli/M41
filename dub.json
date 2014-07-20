@@ -1,0 +1,19 @@
+{
+	"name": "m41.",
+	"description": "A minimal D application.",
+	"copyright": "Copyright © 2014, Roderick Gibson",
+	"authors": ["Roderick Gibson"],
+    "targetName": "m41",
+    "targetType": "executable",
+    "sourcePaths": [ "source/" ],
+    "importPaths": [ "source/" ],
+    "targetPath": "bin",
+    "workingDirectory": "build",
+	"dependencies": {
+		"libnoise-d":">=1.0.0",
+		"dlogg": ">=0.2.2",
+		"derelict-sdl2":"~>1.0.0",
+		"derelict-gl3":"~master",
+		"gl3n":"~master"
+	}
+}
