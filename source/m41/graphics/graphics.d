@@ -11,7 +11,7 @@ final abstract class Graphics
 {
 public static:
     /// The active Adapter
-    Adapter adapter;
+    GraphicsAdapter adapter;
     /// Aliases adapter to Graphics
     alias adapter this;
 
@@ -20,6 +20,7 @@ public static:
      */
     final void initialize()
     {
+        adapter = new SDLGLAdapter;
         adapter.initialize();
         //adapter.initializeDeferredRendering();
         Shaders.initialize();

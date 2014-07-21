@@ -2,7 +2,7 @@
 * Contains all core code for the Graphics adapters, which is similar across all platforms
 */
 module m41.graphics.adapters.adapter;
-import m41.graphics, m41.utility;
+import m41.graphics, m41.utility.properties;
 
 import gl3n.linalg, gl3n.frustum, gl3n.math;
 import derelict.opengl3.gl3;
@@ -12,7 +12,7 @@ import std.algorithm, std.array;
 /**
 * Base class for core rendering logic
 */
-abstract class Adapter
+abstract class GraphicsAdapter
 {
 private:
     GLDeviceContext _deviceContext;
@@ -93,4 +93,7 @@ public:
     */
     abstract void messageLoop();
 
+    //final void update(Scene scene) {
+
+    //}
 }

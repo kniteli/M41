@@ -14,6 +14,7 @@
 		"dlogg": ">=0.2.2",
 		"derelict-sdl2":"~>1.0.0",
 		"derelict-gl3":"~master",
-		"gl3n":"~master"
+		"gl3n":"~master",
+		"dyaml": "~master"
 	}
 }
