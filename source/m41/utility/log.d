@@ -1,7 +1,7 @@
 /**
  * Defines the static Output class, which handles all output to the console window.
  */
-module m41.utility.output;
+module m41.utility.log;
 import dlogg.strict;
 import std.conv;
 import std.stdio;
