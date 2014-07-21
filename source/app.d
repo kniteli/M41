@@ -1,6 +1,10 @@
 import std.stdio;
 
+import m41.core;
+
 void main()
 {
-	writeln("Edit source/app.d to start your project.");
+	MainCore.init();
+
+	MainCore.cleanup();
 }
