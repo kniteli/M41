@@ -1,4 +1,4 @@
-module m41.events.adapters.adapter;
+module m41.input.adapters.adapter;
 
 enum KeyboardButtons: uint
 {
@@ -126,13 +126,23 @@ enum KeyboardButtons: uint
 //    END       
 //}
 
+alias onKeyPressFunc = void function(KeyboardButtons key);
+alias onKeyReleasedFunc = onKeyPressFunc;
+alias onQuitFunc = void function();
+alias onMouseMoveFunc = void function(int x_pos, int y_pos, int dx, int dy);
+
 /**
 * Base class for core rendering logic
 */
-abstract class EventAdapter
+abstract class InputAdapter
 {
 
-bool[KeyboardButtons.END] key_state;
+private:
+    bool[KeyboardButtons.END] key_state;
+    onKeyPressFunc key_press_callback;
+    onKeyReleasedFunc key_release_callback;
+    onQuitFunc quit_callback;
+    onMouseMoveFunc mouse_move_callback;
 
 public:
     /// GL DeviceContext
@@ -150,40 +160,42 @@ public:
     */
     abstract void shutdown();
 
-    final void listenOnKeyPress() {
-
+    final void onKeyPress(onKeyPressFunc callback) {
+        key_press_callback = callback;
     }
 
-    final void listenOnKeyRelease() {
-
+    final void onKeyRelease(onKeyReleasedFunc callback) {
+        key_release_callback = callback;
     }
 
-    final void listenOnMouseMove() {
-
+    final void onMouseMove(onMouseMoveFunc callback) {
+        mouse_move_callback = callback;
     }
 
-    final void listenOnQuit() {
-
+    final void onQuit(onQuitFunc callback) {
+        quit_callback = callback;
     }
 
-    final void isKeyPressed(KeyboardButtons key) {
-
+    final bool isKeyPressed(KeyboardButtons key) {
+        return key_state[key];
     }
 
 protected:
     void keyPressed(KeyboardButtons key) {
         key_state[key] = true;
+        key_press_callback(key);
     }
 
     void quitRequested() {
-
+        quit_callback();
     }
 
-    void mouseMoved(x_pos, y_pos, dx, dy) {
-
+    void mouseMoved(int x_pos, int y_pos, int dx, int dy) {
+        mouse_move_callback(x_pos, y_pos, dx, dy);
     }
 
     void keyReleased(KeyboardButtons key) {
         key_state[key] = false;
+        key_release_callback(key);
     }
 }

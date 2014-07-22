@@ -26,8 +26,8 @@ public:
 		assert(DerelictSDL2.isLoaded(), "DerelictSDL2 must be loaded before initializing the SDLGLAdapter");
     	DerelictGL3.load();
     		    // set the opengl context version
-	    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-	    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
+	    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+	    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
 
 		SDL_InitSubSystem(SDL_INIT_VIDEO);
 
@@ -44,7 +44,7 @@ public:
 
 		DerelictGL3.reload();
 
-    	if( DerelictGL3.loadedVersion < GLVersion.GL40 )
+    	if( DerelictGL3.loadedVersion < GLVersion.GL32 )
         {
             logFatal( "Your version of OpenGL is unsupported. Required: GL40 Yours: ", DerelictGL3.loadedVersion );
             //throw new Exception( "Unsupported version of OpenGL." );

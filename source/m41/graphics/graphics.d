@@ -23,7 +23,7 @@ public static:
         adapter = new SDLGLAdapter;
         adapter.initialize();
         //adapter.initializeDeferredRendering();
-        Shaders.initialize();
+        //Shaders.initialize();
     }
 
     /**
@@ -31,7 +31,7 @@ public static:
      */
     final void shutdown()
     {
-        Shaders.shutdown();
+        //Shaders.shutdown();
         adapter.shutdown();
     }
 

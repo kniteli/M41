@@ -150,10 +150,10 @@ synchronized final class GlobalLogger : StyledStrictLogger!(OutputType
         //    }
         //}
         
-        debug minOutputLevel = OutputType.Info;
+        debug minOutputLevel = OutputType.Debug;
         else minOutputLevel = OutputType.Warning; 
         
-        debug minLoggingLevel = OutputType.Info;
+        debug minLoggingLevel = OutputType.Debug;
         else minLoggingLevel = OutputType.Warning; 
     }
 }

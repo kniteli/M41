@@ -93,7 +93,7 @@ public:
     */
     abstract void messageLoop();
 
-    //final void update(Scene scene) {
-
-    //}
+    final void update() {
+        this.swapBuffers();
+    }
 }
