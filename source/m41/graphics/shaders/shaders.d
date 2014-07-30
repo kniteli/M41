@@ -2,7 +2,7 @@
 * Defines Shader class and the Shaders collection for loading, binding, and setting values in GLSL shaders
 */
 module m41.graphics.shaders.shaders;
-import m41.graphics, m41.utility;
+import m41.utility;
 
 import derelict.opengl3.gl3;
 import gl3n.linalg;

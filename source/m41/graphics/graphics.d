@@ -23,7 +23,8 @@ public static:
         adapter = new SDLGLAdapter;
         adapter.initialize();
         //adapter.initializeDeferredRendering();
-        //Shaders.initialize();
+        Shaders.initialize();
+        adapter.initializeRendering();
     }
 
     /**

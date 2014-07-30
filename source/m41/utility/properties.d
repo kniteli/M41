@@ -6,7 +6,7 @@
 module m41.utility.properties;
 import m41.utility.string;
 
-public import std.traits;
+import std.traits;
 import std.array;
 
 enum AccessModifier : string

@@ -5,6 +5,7 @@ import std.container, std.typecons, std.algorithm, std.stdio;
 
 enum Events : uint {
 	Quit = 0,
+	MouseMove,
 	END
 }
 

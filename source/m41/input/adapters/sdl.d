@@ -139,11 +139,11 @@ final class SDLInputAdapter : InputAdapter {
     /**
     * Initializes the Adapter, called in loading
     */
-    void initialize() {
+    override void initialize() {
     	SDL_InitSubSystem(SDL_INIT_EVENTS);
     }
 
-    void update() {
+    override void update() {
         SDL_Event event;
         while(SDL_PollEvent(&event)) {
             switch(event.type) {
@@ -173,7 +173,7 @@ final class SDLInputAdapter : InputAdapter {
     /**
     * Shuts down the Adapter
     */
-    void shutdown() {
+    override void shutdown() {
         SDL_QuitSubSystem(SDL_INIT_EVENTS);
     }
 

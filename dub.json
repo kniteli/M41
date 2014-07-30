@@ -16,5 +16,19 @@
 		"derelict-gl3":"~master",
 		"gl3n":"~master",
 		"dyaml": "~master"
-	}
+	},
+	"configurations": [
+		{
+			"name": "dmd",
+			"targetType": "executable",
+			"platforms": ["windows"],
+		    "targetPath": "bin/32bit",
+		},
+		{
+			"name": "gdc",
+			"targetType": "executable",
+			"platforms": ["windows"],
+		    "targetPath": "bin/64bit",
+		}
+	]
 }

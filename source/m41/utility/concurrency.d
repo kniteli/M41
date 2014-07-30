@@ -3,7 +3,7 @@
  */
 module m41.utility.concurrency;
 
-public import core.thread, std.concurrency, std.parallelism;
+import core.thread, std.concurrency, std.parallelism;
 
 /// The ID of the main thread
 @property Tid mainThread() { return cast()_mainThread; }

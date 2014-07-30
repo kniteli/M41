@@ -1,13 +1,13 @@
 module m41.graphics.adapters.sdl;
 
-import m41.graphics.graphics;
 import m41.graphics.adapters.adapter;
+import m41.graphics.graphics;
 import m41.utility;
 public import derelict.sdl2.sdl;
 import derelict.opengl3.gl3;
 
-public alias SDL_Window* GLRenderContext;
-public alias SDL_GLContext GLDeviceContext;
+alias SDL_Window* GLRenderContext;
+alias SDL_GLContext GLDeviceContext;
 
 /**
 * TODO
@@ -37,7 +37,8 @@ public:
 	    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 
 	    openWindow();
-
+		glViewport(0, 0, cast(GLsizei)1024, cast(GLsizei)768);
+	   	glClearColor( 0.0, 0.0, 0.0, 0.0 );
 	    // create the opengl3 context
 	    this.sdlGLContext = SDL_GL_CreateContext(this.sdlWindow);
 	   	SDL_GL_SetSwapInterval(0);

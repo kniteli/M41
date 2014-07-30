@@ -11,14 +11,14 @@ import std.file, std.path, std.stdio, std.array, std.datetime;
  */
 enum Resources : string
 {
-    Home = "..",
+    Home = "../..",
     Materials = Home ~ "/Materials",
     Meshes = Home ~ "/Meshes",
     Textures = Home ~ "/Textures",
     Scripts = Home ~ "/Scripts",
     Prefabs = Home ~ "/Prefabs",
     Objects = Home ~ "/Objects",
-    Shaders = Home ~ "/Shaders",
+    Shaders = Home ~ "/shaders",
     UI = Home ~ "/UI",
     ConfigDir = Home ~ "/Config",
     ConfigFile = ConfigDir ~ "/Config.yml",

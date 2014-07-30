@@ -54,7 +54,7 @@ public static:
     }
 
     final void handleMouseMove(int x_pos, int y_pos, int dx, int dy) {
-
+        Hub.postEvent(Events.MouseMove, x_pos, y_pos);
     }
 
     /**
